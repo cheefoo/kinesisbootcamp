@@ -31,10 +31,10 @@ import com.amazonaws.services.kinesis.model.PutRecordsResultEntry;
 
 public class ThreadedProducer implements Runnable 
 {
-	public static final String STREAM_NAME = "BootStream";
+	public static final String STREAM_NAME = "<STREAM_NAME>";
 	private static final Random RANDOM = new Random();
 	private static final Logger logger  = Logger.getLogger(ThreadedProducer.class); 
-	private static final String filePath = "C:\\Users\\temitayo\\workspace\\kinesisbootcamp\\car_odom1.txt";
+	private static final String filePath = "C:\\Users\\xxxxx\\workspace\\kinesisbootcamp\\car_odom1.txt";
 	private static final String DELIM = ",";
 	private List<BootCarObject> carObjectList;
 	
