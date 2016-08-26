@@ -22,5 +22,8 @@ mvn exec:java -Dexec.mainClass=com.tayo.kinesisbootcamp.ThreadedConsumer (see A 
 #start the producer
 mvn exec:java -Dexec.mainClass=com.tayo.kinesisbootcamp.ThreadedProducer
 
-#For the consumer to make connection the database download (http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html#download-jdbc-driver) and install the redshift jar and add it to your path
+#For the consumer to make connection the database 
+
+download (http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html#download-jdbc-driver) and install the redshift jar and add it to your classpath
+
 mvn install:install-file -Dfile=/c/Users/temitayo/workspace/Library/RedshiftJDBC4-1.1.6.1006.jar -DgroupId=com.amazon -DartifactId=redshift.jdbc4 -Dversion=1.1.6.1006 -Dpackaging=jar -DgeneratePom=true
