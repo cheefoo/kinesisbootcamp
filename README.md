@@ -1,7 +1,7 @@
 # kinesisbootcamp
 This program is written to demonstrate the use of the AWS Kinesis Streams API (NOT the Kinesis Cient Library [KCL]) to produce records into the stream continuosly and read data from the stream continuously. The Stream has 3 shards and it distributes records evenly to all the shards.
 #Assumption
-Data is not continuous but a FileObject is created in a CarObject to simulate the continuos flow of data, the ThreadedProducer Class calls the CarObject to get the fileObject in a loop to simulate the appearance of continuous data.
+Data is not continuous but a FileObject is created in a CarObject to simulate the continuos flow of data, the ThreadedProducer Class calls the CarObject to get the fileObject in a loop to simulate the appearance of continuous flow of data.
 #Description
 To achieve a higher throughput, the ThreadedProducer utilizes the Kinesis Asynchronous Client (AmazonKinesisAsyncClient) to ensure that data is produced to the stream without blocking and a callBack handler is added to get the responses from the requests sent by the AmazonKinesisAsyncClient.
 The ThreadedConsumer starts a new thread for each shard to be consumed and each thread does a Kinesis getRecords() call in an infinite loop as prescribed in this documentation below.
