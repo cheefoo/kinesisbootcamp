@@ -11,11 +11,10 @@ The BootCarRecordsProcessor processes the records received from the BootConsumer
 #To Use this application
 git clone https://github.com/cheefoo/kinesisbootcamp.git
 Make the following changes:
-#1. In the ThreadProducer class, 
-change the filepath variable to your own path to the car_odom.txt file (can be found in resources folder).
-#2. In the ThreadProducer class, 
-change the STREAM_NAME to your own stream and please note the region (I used us-west-2).
-#3. Update the db.properties 
+#1. In the ThreadedProducer class, 
+(a). change the filepath variable to your own path to the car_odom.txt file (can be found in resources folder).
+(b). change the STREAM_NAME to your own stream and please note the region (I used us-west-2).
+#2. Update the db.properties 
 to your own database property values
 
 #start the consumer 
