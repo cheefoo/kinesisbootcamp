@@ -11,14 +11,14 @@ The BootCarRecordsProcessor processes the records received from the BootCOnsumer
 #To Use this application
 git clone https://github.com/cheefoo/kinesisbootcamp.git
 Make the following changes:
-1. In the ThreadProducer class, change the filepath variable to your own path.
-2. In the ThreadProducer class, change the STREAM_NAME to your own stream and please note the region (I used us-west-2).
-3. Update the db.properties to your own database property values
+#1. In the ThreadProducer class, change the filepath variable to your own path.
+#2. In the ThreadProducer class, change the STREAM_NAME to your own stream and please note the region (I used us-west-2).
+#3. Update the db.properties to your own database property values
 
-start the consumer 
+#start the consumer 
 mvn exec:java -Dexec.mainClass=com.tayo.kinesisbootcamp.ThreadedConsumer (see A below)
-start the producer
+#start the producer
 mvn exec:java -Dexec.mainClass=com.tayo.kinesisbootcamp.ThreadedProducer
 
-For the consumer to make connection the database download (http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html#download-jdbc-driver) and install the redshift jar and add it to your path
+#For the consumer to make connection the database download (http://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html#download-jdbc-driver) and install the redshift jar and add it to your path
 mvn install:install-file -Dfile=/c/Users/temitayo/workspace/Library/RedshiftJDBC4-1.1.6.1006.jar -DgroupId=com.amazon -DartifactId=redshift.jdbc4 -Dversion=1.1.6.1006 -Dpackaging=jar -DgeneratePom=true
