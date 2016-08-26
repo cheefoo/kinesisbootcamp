@@ -43,7 +43,6 @@ public class BootCallbackHandler implements AsyncHandler<PutRecordsRequest, PutR
             	failedRecordList.add(requestEntry);
             }    
         }
-        if
-	}
+        
 	
 }
