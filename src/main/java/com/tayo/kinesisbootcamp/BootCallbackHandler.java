@@ -22,27 +22,28 @@ public class BootCallbackHandler implements AsyncHandler<PutRecordsRequest, PutR
 		
 	}
 
-	public void onSuccess(PutRecordsRequest request, PutRecordsResult result) 
-	{
-		final List<PutRecordsResultEntry> putRecordsResultEntryList = result.getRecords();
-		final List<PutRecordsRequestEntry> failedRecordList = new ArrayList<PutRecordsRequestEntry>();
-		List<PutRecordsRequestEntry> putRecordsRequestEntryList = request.getRecords();
-          
-        System.out.println("Failed Count is :" + result.getFailedRecordCount()); 
+	public void onSuccess(PutRecordsRequest request, PutRecordsResult result)
+    {
+        final List<PutRecordsResultEntry> putRecordsResultEntryList = result.getRecords();
+        final List<PutRecordsRequestEntry> failedRecordList = new ArrayList<PutRecordsRequestEntry>();
+        List<PutRecordsRequestEntry> putRecordsRequestEntryList = request.getRecords();
+
+        System.out.println("Failed Count is :" + result.getFailedRecordCount());
         logger.info("Failed Count is :" + result.getFailedRecordCount());
-        
-        for (int i = 0; i < putRecordsResultEntryList.size(); i++) 
+
+        for (int i = 0; i < putRecordsResultEntryList.size(); i++)
         {
             final PutRecordsResultEntry resultEntry = putRecordsResultEntryList.get(i);
             final PutRecordsRequestEntry requestEntry = putRecordsRequestEntryList.get(i);
             String errorCode = resultEntry.getErrorCode();
-            if(errorCode != null || errorCode.length() != 0)
+            if (errorCode != null || errorCode.length() != 0)
             {
-            	System.out.println("Failed Record is:" + resultEntry.toString());
+                System.out.println("Failed Record is:" + resultEntry.toString());
                 logger.info("Failed Record is:" + resultEntry.toString());
-            	failedRecordList.add(requestEntry);
-            }    
+                failedRecordList.add(requestEntry);
+            }
         }
+    }
         
 	
 }
